@@ -80,3 +80,6 @@ C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.Open
 C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
