@@ -4,21 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModelModule } from './models/model.module';
-import { ProductTableComponent } from './structure/product-table.component';
-import { CategoryFilterComponent } from './structure/category-filter.component';
-import { ProductDetailComponent } from './structure/product-detail.component';
+import { StoreModule } from './store/store.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProductTableComponent,
-    CategoryFilterComponent,
-    ProductDetailComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ModelModule
+    ModelModule,
+    StoreModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

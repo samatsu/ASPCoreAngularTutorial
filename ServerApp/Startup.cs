@@ -68,7 +68,7 @@ namespace ServerApp
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "angular_fallback",
-                    pattern: "{target:regex(table|detail)}/{*catchall}",
+                    pattern: "{target:regex(store)}/{*catchall}",
                     defaults: new { controller = "Home", action ="Index"});
             });
             app.UseSwagger();
