@@ -28,6 +28,7 @@
           "Microsoft.AspNetCore.SpaServices.Extensions": "3.1.3",
           "Microsoft.EntityFrameworkCore.Design": "3.1.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
+          "Microsoft.Extensions.Caching.SqlServer": "3.1.3",
           "Swashbuckle.AspNetCore": "5.2.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -540,6 +541,22 @@
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Caching.SqlServer/3.1.3": {
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "1.0.19269.1",
+          "Microsoft.Extensions.Caching.Abstractions": "3.1.3",
+          "Microsoft.Extensions.Options": "3.1.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.SqlServer.dll": {
+            "assemblyVersion": "3.1.3.0",
+            "fileVersion": "3.100.320.12802"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.SqlServer.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/3.1.3": {
@@ -3164,6 +3181,13 @@
       "sha512": "sha512-Ie7mWAuyd6BxnUYswc84Bf8iMHknNcP2ZV0me/8ZCsaIwcNb+NUHJOZwwaaAz6HJM6+K0PLilPePTCVkqY8XGw==",
       "path": "microsoft.extensions.caching.memory/3.1.3",
       "hashPath": "microsoft.extensions.caching.memory.3.1.3.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.SqlServer/3.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hKD6kEhmmKwL0gLyYA4/rpBAB6KN7QsFpjuwmiT7us9FCwYQdE/SlketB8lADauCQVUwNLuBQKc8UMcYguJpGw==",
+      "path": "microsoft.extensions.caching.sqlserver/3.1.3",
+      "hashPath": "microsoft.extensions.caching.sqlserver.3.1.3.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/3.1.3": {
       "type": "package",

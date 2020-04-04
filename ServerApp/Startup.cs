@@ -39,6 +39,18 @@ namespace ServerApp
                 options.SwaggerDoc("v1",
                     new OpenApiInfo{ Title = "Sports Store API", Version = "v1"});
             });
+            
+            services.AddDistributedSqlServerCache(options => {
+                options.ConnectionString = connectionString;
+                options.SchemaName = "dbo";
+                options.TableName = "SessionData";
+            });
+            services.AddSession(options =>{
+                options.Cookie.Name = "SportsStore.Session";
+                options.IdleTimeout = System.TimeSpan.FromHours(48);
+                options.Cookie.HttpOnly = false;
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +69,8 @@ namespace ServerApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -68,7 +82,7 @@ namespace ServerApp
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "angular_fallback",
-                    pattern: "{target:regex(store)}/{*catchall}",
+                    pattern: "{target:regex(store|cart|checkout)}/{*catchall}",
                     defaults: new { controller = "Home", action ="Index"});
             });
             app.UseSwagger();

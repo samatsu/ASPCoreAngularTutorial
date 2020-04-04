@@ -7,6 +7,13 @@ import { PaginationComponent } from './pagination.component';
 import { ProductListComponent } from './product-list.component';
 import { CategoryFilterComponent } from './category-filter.component';
 import { RatingsComponent } from './ratings.component';
+import { CartDetailComponent } from './cart-detail.component';
+import { CheckoutDetailsComponent } from './checkout/checkout-details.component';
+import { CheckoutPaymentComponent } from './checkout/checkout-payment.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { CheckoutSummaryComponent } from './checkout/checkout-summary.component';
+import { CheckoutConfirmationComponent } from './checkout/checkout-confirmation.component';
 
 
 
@@ -16,9 +23,14 @@ import { RatingsComponent } from './ratings.component';
     PaginationComponent,
     CartSummaryComponent,
     ProductSelectionComponent,
-    RatingsComponent],
+    RatingsComponent,
+    CartDetailComponent,
+    CheckoutDetailsComponent,
+    CheckoutPaymentComponent,
+    CheckoutSummaryComponent,
+    CheckoutConfirmationComponent],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule, RouterModule
   ],
   exports:[
     ProductSelectionComponent

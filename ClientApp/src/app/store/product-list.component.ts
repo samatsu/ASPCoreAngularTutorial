@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Repository } from '../models/repository';
 import { Product } from '../models/product.model';
+import { Cart } from '../models/cart.model';
 
 @Component({
   selector: 'store-product-list',
@@ -8,7 +9,7 @@ import { Product } from '../models/product.model';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor(private repo: Repository) { }
+  constructor(private repo: Repository, private cart: Cart) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,6 @@ export class ProductListComponent implements OnInit {
     return null;
   }
   addToCart(product: Product){
-    
+    this.cart.addProduct(product);
   }
 }
