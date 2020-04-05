@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Chrome",
             "url": "https://localhost:5001",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}/ClientApp"
         },
         {
             "name": ".NET Core Launch (web)",
