@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using ServerApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ServerApp
 {
@@ -30,6 +31,13 @@ namespace ServerApp
             string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
             services.AddDbContext<DataContext>(options => 
                       options.UseSqlServer(connectionString));
+
+            services.AddDbContext<IdentityDataContext>(options =>
+                options.UseSqlServer(Configuration["ConnectionStrings:Identity"])
+            );
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityDataContext>();
+
             services.AddControllersWithViews()
                     .AddJsonOptions(opts => {
                         opts.JsonSerializerOptions.IgnoreNullValues = true;
@@ -72,7 +80,7 @@ namespace ServerApp
             app.UseSession();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -95,11 +103,13 @@ namespace ServerApp
                     spa.UseProxyToSpaDevelopmentServer("http://127.0.0.1:4200");
                 }else if(strategy == "managed"){
                     // spa.Options.StartupTimeout = new TimeSpan(0,0, 60);
+                    
                     spa.Options.SourcePath = "../ClientApp";
-                    spa.UseAngularCliServer("start");
+                    spa.UseAngularCliServer(npmScript: "start");
                 }
             });
             SeedData.SeedDatabase(services.GetRequiredService<DataContext>());
+            IdentitySeedData.SeedDatabase(services).Wait();
         }
     }
 }

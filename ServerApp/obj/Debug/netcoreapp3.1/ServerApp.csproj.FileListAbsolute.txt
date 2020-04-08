@@ -85,3 +85,9 @@ C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspN
 C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\libman.json
 C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.SqlServer.dll
+C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\projects\angular\SportsStore\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\projects\angular\SportsStore\ServerApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

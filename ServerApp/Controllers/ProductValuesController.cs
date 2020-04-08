@@ -5,16 +5,19 @@ using Microsoft.EntityFrameworkCore;
 using ServerApp.Models;
 using ServerApp.Models.BindingTargets;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ServerApp.Controllers{
     [Route("api/products")]
     [ApiController]
+    [Authorize]
     public class ProductValuesController : Controller{
         private DataContext context;
         public ProductValuesController(DataContext ctx){
             context = ctx;
         }
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public Product GetProduct(long id){
             Product result = context.Products
                         .Include(p => p.Supplier).ThenInclude(s => s.Products)
@@ -42,6 +45,7 @@ namespace ServerApp.Controllers{
             }
             return result;
         }
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetProducts(string category, string search, bool related = false, bool metadata = false){
             IQueryable<Product> query = context.Products;
@@ -55,7 +59,7 @@ namespace ServerApp.Controllers{
                 query = query.Where(p => p.Name.ToLower().Contains(searchLower) 
                                 || p.Description.ToLower().Contains(searchLower));
             }
-            if(related){
+            if(related && HttpContext.User.IsInRole("Administrator")){
                 query = query.Include(p => p.Supplier).Include(p => p.Ratings);
                 List<Product> data = query.ToList();
                 data.ForEach(p => {

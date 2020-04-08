@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ServerApp.Models;
@@ -7,6 +8,7 @@ using ServerApp.Models;
 namespace ServerApp.Controllers{
     [Route("/api/orders")]
     [ApiController]
+    [Authorize(Roles = "Administrator")]
     public class OrderValuesController : Controller{
         private DataContext context;        
 
@@ -25,6 +27,7 @@ namespace ServerApp.Controllers{
                 context.SaveChanges();
             }
         }
+        [AllowAnonymous]
         public IActionResult CreateOrder([FromBody] Order order){
             if(ModelState.IsValid){
                 order.OrderId = 0;

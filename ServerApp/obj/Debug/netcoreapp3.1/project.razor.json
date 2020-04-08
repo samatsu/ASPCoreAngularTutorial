@@ -20621,6 +20621,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\projects\\angular\\SportsStore\\ServerApp\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\projects\\angular\\SportsStore\\ServerApp\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
